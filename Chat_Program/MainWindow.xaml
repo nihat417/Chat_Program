@@ -80,8 +80,9 @@
 
 
                 <Border Grid.Column="1" CornerRadius="22">
-                    <Border.Background>
+                    <Border.Background >
                         <ImageBrush Stretch="Fill" 
+                                   
                                     ImageSource="C:\Users\Администратор\source\repos\Chat_Program\Chat_Program\Images\nihat.jpg"/>
                     </Border.Background>
                 </Border>
@@ -109,15 +110,69 @@
                         Height="22"/>
                 </Grid>
 
-                <Menu Grid.Column="3"
-                      Background="Transparent"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center">
-                    <Image
-                        Source="C:\Users\Администратор\source\repos\Chat_Program\Chat_Program\Images\hamburger.png">
-                    </Image>
-                </Menu>
+                <RibbonMenuButton Grid.Column="3"
+                                  Cursor="Hand"
+                                  x:Name="ExampleMenu" 
+                                  Margin="0,5,0,0"
+                                  LargeImageSource="C:\Users\Администратор\source\repos\Chat_Program\Chat_Program\Images\hamburger.png">
+                    <RibbonMenuItem x:Name="Exititem"
+                                    Cursor="Hand"
+                                    Header="Exit"
+                                    Click="Exititem_Click"/>
+                </RibbonMenuButton>
 
+            </Grid>
+
+            <ScrollViewer Grid.Row="3">
+                <Grid Grid.Row="3"
+                      Name="messagegrid"
+                      >
+                    <Border
+                        BorderBrush="Black" 
+                        BorderThickness="2" >
+                        <Image Source="C:\Users\Администратор\source\repos\Chat_Program\Chat_Program\Images\wpback.png"
+                               Stretch="Fill"></Image>
+                    </Border>
+                </Grid>
+            </ScrollViewer>
+
+            <Grid Grid.Row="4" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="255"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                
+                <Border Grid.Column="1"
+                        BorderThickness="1" 
+                        BorderBrush="Black" 
+                        CornerRadius="10" 
+                        Padding="3,5"
+                        Width="250"
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center">
+                    <TextBox Name="Messagetextbox" Text="Hello ! " BorderThickness="0"/>
+                </Border>
+
+                <Image Grid.Column="2"
+                       Source="C:\Users\Администратор\source\repos\Chat_Program\Chat_Program\Images\clip.png"
+                       Margin="4"
+                       ></Image>
+
+                <Button Name="Sendbtn" Grid.Column="3"
+                        Click="Sendbtn_Click"
+                        Background="Transparent"
+                        HorizontalAlignment="Left">
+                    <Image  
+                       Margin="3"
+                       HorizontalAlignment="Left" 
+                       Source="C:\Users\Администратор\source\repos\Chat_Program\Chat_Program\Images\send.png">
+                    </Image>
+                </Button>
+                
+                
             </Grid>
         </Grid>
     </Border>
